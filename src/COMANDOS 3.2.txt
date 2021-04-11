@@ -1,0 +1,9 @@
+git clone 
+
+cd pzo2.0
+
+chmod +x badut.sh
+
+sh badut.sh
+
+senha: paizao
