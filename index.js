@@ -7,8 +7,6 @@ const {
 } = require('@adiwajshing/baileys')
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
-const antracismo = JSON.parse(fs.readFileSync('./database/json/antracismo.json'))
-const { base } = require('./src/base')
 const { pack } = require('./src/pack')
 const { outros } = require('./src/outros')
 const { destrava } = require('./src/destrava')
@@ -35,7 +33,6 @@ const tiktod = require('tiktok-scraper')
 const { cekvip } = require('./src/cekvip')
 const { TobzApi } = JSON.parse(fs.readFileSync('./database/json/apikey.json'))
 const { VthearApi } = JSON.parse(fs.readFileSync('./database/json/apikey.json'))
-const { daftarvip } = require('./src/daftarvip')
 const { iklan } = require('./src/iklan')
 const { daftatvip } = require('./src/daftarvip')
 const ffmpeg = require('fluent-ffmpeg')
@@ -66,6 +63,7 @@ cr = '*𝑷𝒁𝑶*'
 
 /*********** LOAD FILE ***********/
 const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
+const antracismo = JSON.parse(fs.readFileSync('./database/json/antracismo.json'))
 const antlink = JSON.parse(fs.readFileSync('./database/json/antlink.json'))
 const event = JSON.parse(fs.readFileSync('./database/json/event.json'))
 const _level = JSON.parse(fs.readFileSync('./database/user/level.json'))
@@ -302,6 +300,7 @@ async function starts() {
 			const premium = ["5527997179500@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
+			pushname = client.contacts[sender] != undefined ? client.contacts[sender].vname || client.contacts[sender].notify : undefined
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
 			const groupMembers = isGroup ? groupMetadata.participants : ''
@@ -619,19 +618,29 @@ if (messagesC.includes("preto")){
 		}, 0)
 	}
 	
-	if (messagesC.includes("fdp")){
+	if (messagesC.includes("namora cmg bot")){
 			client.updatePresence(from, Presence.composing)
-			reply("o pai dos seus filhos")
+			reply("mano, eu sou uma inteligência artificial, vc ta precisando se trata 😖s")
 	}
 	
-		if (messagesC.includes("corno")){
+		if (messagesC.includes("bot lindo")){
 			client.updatePresence(from, Presence.composing)
-			reply("teu pai")
+			reply("são seus olhos b😊")
 	}
 	
 		if (messagesC.includes("vtmnc")){
 			client.updatePresence(from, Presence.composing)
 			reply("vem tomar nescau comigo?")
+	}
+	
+	if (messagesC.includes("obgd bot")){
+			client.updatePresence(from, Presence.composing)
+			reply("de nd :)")
+	}
+	
+	if (messagesC.includes("eae bot")){
+			client.updatePresence(from, Presence.composing)
+			reply("eae lindo(a), tudo bom?")
 	}
 	
 	if (messagesC.includes("canal")){
@@ -641,22 +650,7 @@ if (messagesC.includes("preto")){
 	
 		if (messagesC.includes("vsfd")){
 			client.updatePresence(from, Presence.composing)
-			reply("bora juntos?")
-	}
-	
-		if (messagesC.includes("cadebot")){
-			client.updatePresence(from, Presence.composing)
-			reply("sabe deus")
-	}
-	
-		if (messagesC.includes("eae bot")){
-			client.updatePresence(from, Presence.composing)
-			reply("eae lindo, tudo bom?")
-	}
-	
-	if (messagesC.includes("bot lindo")){
-			client.updatePresence(from, Presence.composing)
-			reply("são seus olhos b😊")
+			reply("vai tu, ja me disse q era mo bom")
 	}
 	
 				if (messagesC.includes("canta")){
@@ -701,24 +695,6 @@ if (messagesC.includes("preto")){
 				case 'menu':
 					client.sendMessage(from, help(prefix), text)
 					break
-				case 'base':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply('Por um acaso, você é admin do grupo? KKKKKKKKKK')
-					client.sendMessage(from, base(prefix), text) 
-					break
-					case 
-'Criador' :
-Reply(from ,`🚀salva zap🚀
-
-😎Me chamo blvkvl
-
-🌹client.updatePresence(from, Presence.composing) 
-                  options = {🌹
-🌞　　　　🛸　　　 　🌎　°　　🌓　•　　.°•　　　🚀 ✯✯　　
-　　　★　*　　　　　°　　　　🛰　°·　　
-.　　　•　°★　•
-▁▂▃▄▅▆▇▇▆▅▄▃🌲Quiser Trocar divulgação vai no meu pv`, id)
-break
 		    	case 'wa.me':
 		        case 'wame':
                   client.updatePresence(from, Presence.composing) 
@@ -992,7 +968,7 @@ break
 					}
 					client.sendMessage(from, teks, text, {detectLinks: false, quoted: mek})
 					break
-				case 'admintm':
+				case 'adm':
 					if (!isOwner) return reply('Quem é Você? Você não é o paizão')
 					if (args.length < 1) return reply('Qual foi mano, esqueceu do texto')
 					anu = await client.chats.all()
@@ -1000,7 +976,7 @@ break
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `[ TRANSMIÇÃO DE AVISO ]\n\n${body.slice(4)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `[ TRANSMISSÃO DE AVISO ]\n\n${body.slice(4)}`})
 						}
 						reply('Transmissão enviada com sucesso')
 					} else {
@@ -1009,6 +985,45 @@ break
 						}
 						reply('Transmissão enviada com sucesso')
 					}
+					break
+					case 'gay':		
+	            	if (args.length < 1) return reply('marque seus amigos!')
+					rate = body.slice(1)
+					const ti =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
+					const kl = ti[Math.floor(Math.random() * ti.length)]
+					client.sendMessage(from, 'Como você é gay: *'+rate+'*\n\nSua porcentagem gay : '+ kl+'%', text, { quoted: mek })
+					break
+					case 'gay1':
+
+					gay = body.slice(13)
+		   anu = await fetchJson(`https://arugaz.herokuapp.com/api/howgay`, {method: 'get'})
+		   hasil = `Veja os dados do Gay ${gay}\n\n\nPercentagem Gay : ${anu.persen}%\nAlerta!!! : gay, mas não cego`
+		   reply(hasil)
+		   await limitAdd(sender)
+					break
+					case 'ytmp4':
+					if (args.length < 1) return reply('Cadê o url, hum?')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Title* : ${anu.title}`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					break
+					case 'ytmp3':
+			    	if (!isPremium) return reply(mess.only.premium)
+                   reply(mess.wait)
+					if (args.length < 1) return reply('Cadê o url, hum?')
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/yta?url=${args[0]}&apiKey=${apiKey}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Título* : ${anu.title}\n*Tamanho do arquivo* : ${anu.filesize}`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					bufferyyy = await getBuffer(anu.result)
+					client.sendMessage(from, bufferyyy, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
         case 'promover':
 					if (!isGroup) return reply(mess.only.group)
@@ -1031,12 +1046,12 @@ break
 					case 'antracismo':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('use *antracismo on')
+					if (args.length < 1) return reply('use #antracismo on')
 					if ((args[0]) === 'on') {
 						if (isAntRacismo) return reply('O modo ant-racismo foi ativado')
 						antracismo.push(from)
 						fs.writeFileSync('./database/json/antracismo.json', JSON.stringify(antracismo))
-						reply(`\`\`\`✓Ant-racismo ativafo com sucesso\`\`\` *${groupMetadata.subject}*`)
+						reply(`\*✓Ant-racismo ativado com sucesso\* *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						antracismo.splice(from, 1)
 						fs.writeFileSync('./database/json/antracismo.json', JSON.stringify(antracismo))
@@ -1077,7 +1092,7 @@ break
 						mentions(teks, mentioned, true)
 						client.groupRemove(from, mentioned)
 					} else {
-						mentions(`Alvo removido com sucesso  : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`Kid removido com sucesso 😊 ${pushname}`, mentioned, true)
 						client.groupRemove(from, mentioned)
 					}
 					break
@@ -1098,7 +1113,7 @@ break
                                         linkgc = await client.groupInviteCode(from)
                                         reply('https://chat.whatsapp.com/'+linkgc)
                                         break
-					case 'ptoimg':
+					case 'toimg':
 					if (!isQuotedSticker) return reply('{ ⚠️ } *Marque a figurinha [não animada]*')
 					reply(mess.wait)
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -1115,7 +1130,7 @@ break
 				case 'bemvindo':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					if (args.length < 1) return reply('tente usar .bemvindo 1')
+					if (args.length < 1) return reply('tente usar #bemvindo 1')
 					if (Number(args[0]) === 1) {
 						if (isWelkom) return reply('Já esta ativo.')
 						welkom.push(from)
@@ -1129,7 +1144,7 @@ break
 						reply('1 para ativar e 0 para desativar')
 					}
                                       break
-                case 'admintm2':
+                case 'adm2':
 					if (!isadminbot) return reply('Quem é Você? Você não é o paizão')
 					if (args.length < 1) return reply('faltou o texto😴')
 					anu = await client.chats.all()
@@ -1147,7 +1162,7 @@ break
 						reply('Transmissão enviada')
 					}
 					break
-                case 'admintm3':
+                case 'adm3':
 					if (!isadminbot) return reply('Quem é Você? Você não é o paizão')
 					if (args.length < 1) return reply('faltou o texto😴')
 					anu = await client.chats.all()
