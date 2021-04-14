@@ -36,9 +36,9 @@ const help = (prefix) => {
 ╠➥ *${prefix}gay1*
 ╠➥ *${prefix}grupoinfo* 
 ╠➥ *${prefix}linkgp* 
-╠➥ *${prefix}marcar* 
-╠➥ *${prefix}marcar2*
-╠➥ *${prefix}marcar3*
+╠➥ *${prefix}everyone* 
+╠➥ *${prefix}everyone2*
+╠➥ *${prefix}everyone3*
 ╠➥ *${prefix}promover [@]*
 ╠➥ *${prefix}rebaixar [@]*
 ╠➥ *${prefix}setnome*
@@ -54,11 +54,9 @@ const help = (prefix) => {
 ╠➥ *${prefix}canal*
 ╠➥ *${prefix}dado*
 ╠➥ *${prefix}lofi*
-╠➥ *${prefix}map [nome]*
 ╠➥ *${prefix}memea*
 ╠➥ *${prefix}termux*
 ╠➥ *${prefix}wame*
-╠➥ *${prefix}covid*
 ║
 ╠═══⚔️〘 BOT INFOS〙⚔️════
 ╠➥ *${prefix}ping [ver velocidade do bot]*
@@ -71,7 +69,7 @@ const help = (prefix) => {
 ╠➥ *${prefix}fdp*
 ╠➥ *${prefix}ola*
 ╠➥ *${prefix}vtmnc*
-╠➥ *canta ai bot [prefix "." não necessário]*
+╠➥ *canta ai bot [prefix "#" não necessário]*
 ║
 ╠═══⚔️〘 INTERATIVOS 〙⚔️════
 ╠➥ *bot lindo*
