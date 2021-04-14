@@ -5,7 +5,6 @@ const {
     Mimetype,
     GroupSettingChange
 } = require('@adiwajshing/baileys')
-const { color, bgcolor } = require('./lib/color')
 const { help } = require('./src/help')
 const { pack } = require('./src/pack')
 const { outros } = require('./src/outros')
